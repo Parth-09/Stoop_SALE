@@ -1,9 +1,10 @@
 /* styles.css */
 body {
-  font-family: Arial, sans-serif;
+  font-family: Papyrus;
+  text-align: center;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
+  background-color: #5f5656;
 }
 
 header {
@@ -12,6 +13,7 @@ header {
   padding: 1rem;
   text-align: center;
 }
+
 
 footer {
   background-color: #333;
@@ -44,7 +46,7 @@ button:hover {
 }
 
 /* map css styling */
-.map-container {
+.map-container, .details-container {
   position: relative;
   width: calc(50% - 10px); /* Half of the container width minus spacing */
   margin-right: 20px; /* Spacing between Map and Details */
@@ -52,9 +54,16 @@ button:hover {
   height: 0;
   overflow: hidden;
   border-radius: 12px; /* Rounded corners */
-  border: 2px solid #333; /* Dark border */
+  background-color: rgb(182, 161, 135);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  max-width: 400px;
+  max-height: 100px;
 }
+
+.map-cont {
+  border-radius: 12px;
+}
+
 
 .map {
   position: absolute;
@@ -65,15 +74,72 @@ button:hover {
   border-radius: 10px; /* Rounded corners for iframe */
 }
 
-/* details css */
-.details-container {
-  width: calc(50% - 10px); /* Half of the container width minus spacing */
-  margin-right: 20px; /* Spacing between Details and Map */
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 12px; /* Rounded corners */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+/* ShareButton styles */
+
+.share-container {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center align children horizontally */
+  gap: 2px; /* Adjust gap between items */
+  margin-top: 20px;
+  width: 100%; /* Ensure the container takes full width of its parent */
+  max-width: 800px; /* Limit maximum width */
+  margin: 0 auto; /* Center horizontally */
+  padding-top: 20px;
 }
+
+.share-input-container {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+}
+
+.share-link {
+  width: calc(100% - 40px); /* Adjusted width to leave space for the copy icon */
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.copy-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #ff6f61;
+  font-size: 20px;
+}
+
+.share-button {
+  padding: 8px 16px; /* Reduced padding for a more compact button */
+  background-color: #141111;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 14px; /* Slightly smaller font size */
+  border-radius: 4px; /* Slightly reduced border radius for smoother look */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+}
+
+.share-button:hover {
+  background-color: #c5bcbc;
+  transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+/* Share button wrapper styles */
+.share-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+
+
+/* details css */
+
 
 @media (max-width: 768px) {
   .map-container,
@@ -84,11 +150,14 @@ button:hover {
   }
 }
 
-/* .details-container p {
+.details-container p {
   margin-bottom: 10px;
   line-height: 1.5;
+  color: white;
+  font-style:italic;
+  font-size: large;
 }
 
 .details-container p:last-child {
   margin-bottom: 0;
-} */
+}
