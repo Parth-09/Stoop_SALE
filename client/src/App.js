@@ -12,8 +12,10 @@ function App() {
     <div className="body">
       <Header/>
       <div className='content-wrapper'>
+        <div className='details-container'>
         <Details/>
-        <div>
+        </div>
+        <div className='map-container'>
         {/* AIzaSyCWEG5Y4K7kA9nMFcN-cmVUPdvpoJm9GB0 */}
           <Map/>
         </div>

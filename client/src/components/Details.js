@@ -1,5 +1,6 @@
 import React from "react";
-
+import { QRCodeCanvas } from 'qrcode.react';
+const eventLink = 'http://localhost:3000/';
 const Details = () => (
   
   <section id="details" className="details-container">
@@ -11,6 +12,7 @@ const Details = () => (
       </p>
       <p>Date: July 15th, 2024</p>
       <p>Time: 10:00 AM - 4:00 PM</p>
+      <QRCodeCanvas value={eventLink} size={128} />
   </section>
 );
 

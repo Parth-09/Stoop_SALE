@@ -39,30 +39,29 @@ button:hover {
 
 /* wrapping details and map */
 .content-wrapper {
-  display: flex;
-  justify-content: center; /* Center align children horizontally */
-  align-items: flex-start; /* Align items at the top */
-  margin-top: 20px; /* Adjust spacing as needed */
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  gap: 20px; /* Spacing between the columns */
+  width: 100%; /* Full width of the parent container */
+  max-width: 800px; /* Adjust the max width as needed */
+  margin: 0 auto; /* Center the container horizontally */
 }
 
 /* map css styling */
 .map-container, .details-container {
   position: relative;
-  width: calc(50% - 10px); /* Half of the container width minus spacing */
-  margin-right: 20px; /* Spacing between Map and Details */
-  padding-bottom: 30%; /* Aspect ratio control (height / width * 100) */
-  height: 0;
+  width: 100%; /* Full width of the grid item */
+  height: 400px; /* Fixed height for both containers */
   overflow: hidden;
   border-radius: 12px; /* Rounded corners */
   background-color: rgb(182, 161, 135);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
-  max-width: 400px;
-  max-height: 100px;
+  max-width: 400px; /* Optional max width to prevent stretching */
 }
 
-.map-cont {
+/* .map-cont {
   border-radius: 12px;
-}
+} */
 
 
 .map {
@@ -71,7 +70,7 @@ button:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  border-radius: 10px; /* Rounded corners for iframe */
+  border-radius: 10px; /* Rounded corners for iframe*/
 }
 
 /* ShareButton styles */
@@ -136,11 +135,11 @@ button:hover {
   
 }
 
-
+.qr-code {
+  margin-top: 20px; /* Add space above the QR code */
+}
 
 /* details css */
-
-
 @media (max-width: 768px) {
   .map-container,
   .details-container {
@@ -161,3 +160,19 @@ button:hover {
 .details-container p:last-child {
   margin-bottom: 0;
 }
+.overlay {
+  position: absolute;
+  top: 20px; /* Adjust as needed */
+  left: 20px; /* Adjust as needed */
+  background-color: rgba(63, 240, 219, 0.8); /* Semi-transparent white background */
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  z-index: 1000; /* Ensure it's above the map */
+}
+
+.overlay:hover {
+  background-color: rgba(0, 0, 0, 0.8); /* Darker background on hover */
+  color: white; /* Text color on hover */
+}
+
