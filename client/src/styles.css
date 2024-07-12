@@ -1,0 +1,94 @@
+/* styles.css */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* wrapping details and map */
+.content-wrapper {
+  display: flex;
+  justify-content: center; /* Center align children horizontally */
+  align-items: flex-start; /* Align items at the top */
+  margin-top: 20px; /* Adjust spacing as needed */
+}
+
+/* map css styling */
+.map-container {
+  position: relative;
+  width: calc(50% - 10px); /* Half of the container width minus spacing */
+  margin-right: 20px; /* Spacing between Map and Details */
+  padding-bottom: 30%; /* Aspect ratio control (height / width * 100) */
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px; /* Rounded corners */
+  border: 2px solid #333; /* Dark border */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.map {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px; /* Rounded corners for iframe */
+}
+
+/* details css */
+.details-container {
+  width: calc(50% - 10px); /* Half of the container width minus spacing */
+  margin-right: 20px; /* Spacing between Details and Map */
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+@media (max-width: 768px) {
+  .map-container,
+  .details-container {
+    width: 100%; /* Full width on smaller screens */
+    margin-right: 0; /* No spacing between on smaller screens */
+    margin-bottom: 20px; /* Space between vertically on smaller screens */
+  }
+}
+
+/* .details-container p {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.details-container p:last-child {
+  margin-bottom: 0;
+} */
